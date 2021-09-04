@@ -10,6 +10,7 @@ from typing import Final
 
 class RandomGen(object):
     def __init__(self):
+        os.system('cls')
         self.length = int(input("Enter the length of password: "))
         self.s = input("Enter the type of password: ").split(",", 3)
         for i in range(len(self.s)):
