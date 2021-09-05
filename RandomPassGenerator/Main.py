@@ -32,6 +32,7 @@ class RandomGen(object):
         # for i in range (self.length):
         #     self.lst.append(random.choice(self.numbers))
         #test
+        #Test
         if 'Letters' in self.s and 'Symbols' in self.s and 'Numbers' in self.s:
             for i in range (self.length):
                 self.lst.append(random.choice(self.letters))
