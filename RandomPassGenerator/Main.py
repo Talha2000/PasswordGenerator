@@ -20,10 +20,10 @@ class RandomGen(object):
         self.numbers = list(string.digits)
         self.RegPattern = "([a-zA-Z0-9]+[!@#$%^*()])\w+"
         self.keyWordPass()
-        # self.startDatabase()
 
     # checks what the keywords is or if there are multiple keywords
     def keyWordPass(self):
+
         self.lst = []
         # for i in range (self.length):
         #     self.lst.append(random.choice(self.letters))
@@ -38,12 +38,12 @@ class RandomGen(object):
                 self.lst.append(random.choice(self.numbers))
 
         # optimize later
-        elif 'Letters' and 'Symbols' in self.s:
+        elif 'Letters' in self.s and 'Symbols' in self.s:
             for i in range (self.length):
                 self.lst.append(random.choice(self.letters))
                 self.lst.append(random.choice(self.symbols))
 
-        elif 'Letters' and 'Numbers' in self.s:
+        elif 'Letters' in self.s and 'Numbers' in self.s:
             for i in range (self.length):
                 self.lst.append(random.choice(self.letters))
                 self.lst.append(random.choice(self.numbers))
@@ -66,25 +66,5 @@ class RandomGen(object):
         Final_password = ("".join(self.lst))
         # Check = re.search(self.RegPattern, Final_password)
         print(Final_password)
-
-    def startDatabase(self):
-        connection = db.connect("RandomPassGenerator\Pass.db")
-        cur = connection.cursor()
-        sql = '''
-        create table if not exists Pass (
-            Password string,
-            category string,
-            date string
-            )
-        '''
-        cur.execute(sql)
-        connection.commit()
-
-    def savePassword(self):
-        pass
-
-
-
+        
 RandomGen()
-
-    
